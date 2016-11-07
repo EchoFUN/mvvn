@@ -9,10 +9,3 @@
  * 
  */
 
-const koa = require('koa');
-const serve = require('koa-static');
-
-const app = koa();
-
-app.use(serve(__dirname + '/tests'));
-app.listen(9222);
