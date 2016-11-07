@@ -9,6 +9,6 @@
  * 
  */
 
-const component = require( './component');
+import logger from './logger';
 
-component.logger('Hello, world !');
+logger('Hello, world !');
