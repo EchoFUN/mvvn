@@ -7,10 +7,14 @@
     "url": "git@github.com:EchoFUN/mvvn.git",
     "type": "git"
   },
+  "scripts": {
+    "dev": "node ./build/server.js"
+  },
   "author": "XU Kai(xukai.ken@gmail.com)",
   "license": "MIT",
   "devDependencies": {
+    "koa": "^1.2.4",
+    "koa-static": "^2.0.0"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
