@@ -8,5 +8,11 @@
     "type": "git"
   },
   "author": "XU Kai(xukai.ken@gmail.com)",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "koa": "^1.2.4",
+    "koa-static": "^2.0.0"
+  },
+  "dependencies": {
+  }
 }
