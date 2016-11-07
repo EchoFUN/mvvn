@@ -25,7 +25,6 @@ module.exports = {
     loaders: [{
       test: /\.js$/,
       loader: 'babel',
-      include: projectRoot + 'lego',
       query: {
         presets: ['es2015']
       }
