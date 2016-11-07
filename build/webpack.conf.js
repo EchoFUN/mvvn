@@ -18,7 +18,7 @@ module.exports = {
 
   output: {
     path: '../pre/dist',
-    filename: './app.js'
+    filename: 'app.js'
   },
 
   module: {
