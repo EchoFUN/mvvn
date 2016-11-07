@@ -14,5 +14,5 @@ const serve = require('koa-static');
 
 const app = Koa();
 
-app.use(serve(__dirname + '/../demo'));
+app.use(serve(__dirname + '/../pre'));
 app.listen('8080');
