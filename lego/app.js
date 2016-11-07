@@ -11,4 +11,7 @@
 
 import logger from './logger';
 
-logger('Hello, world !');
+
+document.write('Hello, world ! <br /><br />');
+
+document.write('<pre>' + logger.toString() + '</pre>');
