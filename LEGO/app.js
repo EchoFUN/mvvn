@@ -9,3 +9,6 @@
  * 
  */
 
+import component from './component';
+
+component.logger('Hello, world !');
