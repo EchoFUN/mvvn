@@ -1,2 +1,2 @@
 # MVVN
-A simulation on the MVVN programming philosophy .
+A simulation on the MVVN programming philosophy . 
