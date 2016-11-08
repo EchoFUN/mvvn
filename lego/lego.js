@@ -11,7 +11,12 @@
 
 import logger from './logger';
 
+class Lego {
+  constructor() {
+    let args = arguments;
 
-document.write('Hello, world ! <br /><br />');
+    debugger;
+  }
+}
 
-document.write('<pre>' + logger.toString() + '</pre>');
+export default Lego;

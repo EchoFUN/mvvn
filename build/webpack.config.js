@@ -14,7 +14,7 @@ const projectRoot = __dirname + '/../';
 module.exports = {
   context: projectRoot,
 
-  entry: './lego/app.js',
+  entry: './lego/boot.js',
 
   output: {
     path: '../pre/dist',
