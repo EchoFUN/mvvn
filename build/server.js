@@ -9,18 +9,6 @@
  * 
  */
 
-// Call up the system
-const spawn = require('child_process').spawn;
-const webpack = spawn('webpack', ['--config', './build/webpack.config.js', '--watch']);
-webpack.stdout.on('data', data => {
-  console.log(`stdout: ${data}`);
-});
-
-webpack.stderr.on('data', data => {
-  console.log(`stderr: ${data}`);
-});
-
-
 const Koa = require('koa');
 const serve = require('koa-static');
 const app = Koa();

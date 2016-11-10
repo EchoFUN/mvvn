@@ -9,12 +9,25 @@
  * 
  */
 
+import utils from './utils'
 
 class Component {
-  constructor() {
+
+  constructor(config) {
+    config = utils.assign(config, {
+
+    });
+
+    config = this._preprocess(config);
+  }
+
+  // Pre Process the data for the whole app configration.
+  _preprocess(config) {
+
   }
 }
 
 export default Component;
+
 
 

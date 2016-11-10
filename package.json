@@ -10,8 +10,10 @@
   "scripts": {
     "dev": "node ./build/server.js"
   },
+
   "author": "XU Kai(xukai.ken@gmail.com)",
   "license": "MIT",
+  
   "devDependencies": {
     "babel-core": "^6.18.2",
     "babel-loader": "^6.2.7",
@@ -20,5 +22,7 @@
     "koa-static": "^2.0.0",
     "webpack": "^1.13.3"
   },
-  "dependencies": {}
+  "dependencies": {
+    "lodash": "^4.16.6"
+  }
 }
