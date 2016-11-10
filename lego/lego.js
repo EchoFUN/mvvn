@@ -9,14 +9,12 @@
  * 
  */
 
-import logger from './logger';
 
-class Lego {
+class Component {
   constructor() {
-    let args = arguments;
-
-    debugger;
   }
 }
 
-export default Lego;
+export default Component;
+
+
