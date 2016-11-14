@@ -31,7 +31,62 @@ class Lego {
       datasouce: config.data
     });
 
-    debugger;
+    this._bindData(config);
+    this._bindEvents();
+  }
+
+  /**
+   * 
+   * 
+   * 
+   * 
+   * 
+   * 
+   */
+  _render() {
+
+    // TODO 比较粗放型的直接改变，否则是需要进行计算 Virtual DOM 的 diff，并且进行相应的调整
+
+  }
+
+  /**
+   * 
+   * 对模板在模板上的事件进行一系列的方法绑定；
+   * 
+   * 
+   * 
+   */
+  _bindEvents() {
+    
+  }
+
+  /**
+   * 
+   * 对 config 中的 data 字段进行监听；
+   * 
+   * 
+   * 
+   * 
+   */
+  _bindData(config) {
+    let data = config.data;
+    
+    let self = this;
+    Object.keys(data).forEach((value, index) => {
+
+      Object.defineProperty(data, value, {
+        get: () => {
+          return data[index];
+        },
+
+        set: (value) => {
+          data[index] = value;
+
+          debugger;
+          self.render();
+        }
+      })
+    });
   }
 }
 

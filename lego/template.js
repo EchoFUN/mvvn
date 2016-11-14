@@ -21,7 +21,7 @@ class Template {
   static compile (input, config) {
 
     // TODO 这里仅仅处理作为不带逻辑符号（if, for）等等关键字的模板编译，否则不能用 replace 处理；    
-    input = input.replace(/1/, function() {
+    input = input.replace(/1/, () => {
       
     });
 

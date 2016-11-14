@@ -16,7 +16,7 @@
  * @return {Boolean} 是否为一个字符（串）
  * 
  */
-exports.isCharacter = function (input) {
+exports.isCharacter = (input) => {
 
 
 }
