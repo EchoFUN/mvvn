@@ -10,21 +10,29 @@
  */
 
 import utils from './utils'
+import template from './template';
 
-class Component {
+class Lego {
 
+  /**
+   * 
+   * @param {Object} config 构造方法配置文件信息；
+   * 
+   * 
+   * 
+   */
   constructor(config) {
-    config = utils.assign(config, {
-      
+
+    // TODO 判断输入参数的是否为字符串或者一个DOM对象，以及输入参数的合法性（即是否存在）；
+    let queryElement = document.querySelectorAll(config.element);
+
+    // TODO 对 nodeList 对象进行封装处理，确保能够执行到 nodeList 中的每一个元素；
+    queryElement[0].innerHTML = template.compile(config.template, {
+      datasouce: config.data
     });
 
-    config = this._preprocess(config);
-  }
-
-  // Pre Process the data for the whole app configration.
-  _preprocess(config) {
-
+    debugger;
   }
 }
 
-exports = Component;
+export default Lego;
