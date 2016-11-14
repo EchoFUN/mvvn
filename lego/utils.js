@@ -9,8 +9,7 @@
  * 
  */
 
-function assign () {
-  
-}
+exports.assign = function () {
+  console.log('Hi');
 
-exports.assign = assign;
+}

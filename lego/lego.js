@@ -15,7 +15,7 @@ class Component {
 
   constructor(config) {
     config = utils.assign(config, {
-
+      
     });
 
     config = this._preprocess(config);
@@ -27,7 +27,4 @@ class Component {
   }
 }
 
-export default Component;
-
-
-
+exports = Component;
