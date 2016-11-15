@@ -12,6 +12,8 @@
 import utils from './utils'
 import template from './template';
 
+import {h, diff, patch, createElement} from 'virtual-dom';
+
 class Lego {
 
   /**
@@ -25,6 +27,7 @@ class Lego {
     this.config = config;
 
     this._render();
+    
     this._bindData();
     this._bindEvents();
   }
