@@ -12,7 +12,7 @@
 import utils from './utils'
 import template from './template';
 
-import {h, diff, patch, createElement} from 'virtual-dom';
+// import {h, diff, patch, createElement} from 'virtual-dom';
 
 class Lego {
 
@@ -62,11 +62,7 @@ class Lego {
    * 
    */
   _bindEvents() {
-
-    let self = this;
-    setTimeout(() => {
-      self.config.data.welcome = 'Fuck';
-    }, 3000); 
+    
   }
 
   /**
