@@ -42,6 +42,7 @@ setInterval(function () {
 
   var newTree = render(count);
   var patches = diff(tree, newTree);
+  
   rootNode = patch(rootNode, patches);
   tree = newTree;
 }, 1000);
