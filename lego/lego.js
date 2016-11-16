@@ -11,6 +11,7 @@
 
 import utils from './utils'
 import template from './template';
+import directive from './directive';
 
 // import {h, diff, patch, createElement} from 'virtual-dom';
 
@@ -53,6 +54,7 @@ class Lego {
       datasource: config.data
     });
 
+    // TODO 这里把DOM转换为虚拟 DOM 进行保存效率也许会更高，But, what ever !；
     this.queryElement = queryElement;
   }
 
@@ -64,11 +66,30 @@ class Lego {
    * 
    */
   _bindEvents() {
-    this._transverse(this.queryElement, )
+    this._transverse(this.queryElement, (node) => {
+      if (node.nodeType == 1) { // 普通元素节点
+        let attributes = node.attributes;
+
+        Object.keys(attributes).forEach((key) => {
+          let directive = attributes[key].value;
+
+          debugger;
+        });
+      }
+    });
   }
 
-  _transverse() {
+  _transverse(node, callback) {
+    if (node.hasChildNodes()) {
+      let children = node.childNodes, childrenLen = children.length;
+      for (let i = 0; i < childrenLen; i++) {
+        let _child = children[i];
+        callback(_child);
 
+        // 递归深度遍历节点，进行相应的处理
+        this._transverse(_child, callback);
+      }
+    }
   }
 
   /**
