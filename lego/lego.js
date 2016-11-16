@@ -71,9 +71,10 @@ class Lego {
         let attributes = node.attributes;
 
         Object.keys(attributes).forEach((key) => {
-          let directive = attributes[key].value;
+          let direct = attributes[key].value;
 
-          debugger;
+          
+          directive[direct].bind.call(node);
         });
       }
     });
