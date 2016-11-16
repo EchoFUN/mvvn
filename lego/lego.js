@@ -27,7 +27,7 @@ class Lego {
     this.config = config;
 
     this._render();
-    
+
     this._bindData();
     this._bindEvents();
   }
@@ -43,15 +43,17 @@ class Lego {
   _render() {
 
     // TODO 比较粗放型的直接改变，否则是需要进行计算 Virtual DOM 的 diff，并且进行相应的调整
-    
+
     // TODO 判断输入参数的是否为字符串或者一个DOM对象，以及输入参数的合法性（即是否存在）；
     let config = this.config;
-    let queryElement = document.querySelectorAll(config.element);
+    let queryElement = document.querySelector(config.element);
 
     // TODO 对 nodeList 对象进行封装处理，确保能够执行到 nodeList 中的每一个元素；
-    queryElement[0].innerHTML = template.compile(config.template, {
+    queryElement.innerHTML = template.compile(config.template, {
       datasource: config.data
     });
+
+    this.queryElement = queryElement;
   }
 
   /**
@@ -62,7 +64,11 @@ class Lego {
    * 
    */
   _bindEvents() {
-    
+    this._transverse(this.queryElement, )
+  }
+
+  _transverse() {
+
   }
 
   /**
@@ -75,20 +81,16 @@ class Lego {
    */
   _bindData() {
     let data = this.config.data;
-    
+
     let self = this;
     Object.keys(data).forEach((value, index) => {
 
       Object.defineProperty(data, value, {
-        get: () => {
-          return data[index];
-        },
-
         set: (value) => {
           data[index] = value;
           self._render();
         }
-      })
+      });
     });
   }
 }
