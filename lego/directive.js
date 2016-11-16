@@ -9,11 +9,13 @@
  * 
  */
 
-export let handler = {
+exports.handler = {
 
-  bind: (node) => {
+  bind: function(node) {
+    var self = this;
+    node.addEventListener('click', function() {
 
-    debugger;
+      self.config.data.welcome = 'Hi~';
+    });
   }
-
 };

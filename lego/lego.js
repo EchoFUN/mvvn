@@ -8,7 +8,7 @@
  * 
  * 
  */
-
+ 
 import utils from './utils'
 import template from './template';
 import directive from './directive';
@@ -72,9 +72,9 @@ class Lego {
 
         Object.keys(attributes).forEach((key) => {
           let direct = attributes[key].value;
-
           
-          directive[direct].bind.call(node);
+          console.log(directive);
+          directive[direct].bind.call(this, node);
         });
       }
     });
@@ -85,7 +85,7 @@ class Lego {
       let children = node.childNodes, childrenLen = children.length;
       for (let i = 0; i < childrenLen; i++) {
         let _child = children[i];
-        callback(_child);
+        callback( _child);
 
         // 递归深度遍历节点，进行相应的处理
         this._transverse(_child, callback);
@@ -105,11 +105,14 @@ class Lego {
     let data = this.config.data;
 
     let self = this;
-    Object.keys(data).forEach((value, index) => {
+    Object.keys(data).forEach(function(keyVal) {
 
-      Object.defineProperty(data, value, {
+      Object.defineProperty(data, keyVal, {
         set: (value) => {
-          data[index] = value;
+
+
+          debugger;
+          data[keyVal] = value;
           self._render();
         }
       });
