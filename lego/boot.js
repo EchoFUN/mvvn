@@ -15,7 +15,7 @@ const instance = new Lego({
   element: '#app',
 
   template: `
-    <div c-handler="handler">Hi, guys. {{ welcome }}</div>
+    <div c-handler="handler" style="cursor: pointer;display: inline;">Hi, guys. {{ welcome }}</div>
   `,
 
   // The data needed for the template bind.

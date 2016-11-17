@@ -8,7 +8,7 @@
  * 
  * 
  */
- 
+
 import utils from './utils'
 import template from './template';
 import directive from './directive';
@@ -72,9 +72,12 @@ class Lego {
 
         Object.keys(attributes).forEach((key) => {
           let direct = attributes[key].value;
-          
-          console.log(directive);
-          directive[direct].bind.call(this, node);
+
+          let director = directive[direct];
+          if (!director) {
+            return;
+          }
+          director.bind.call(this, node);
         });
       }
     });
@@ -82,10 +85,12 @@ class Lego {
 
   _transverse(node, callback) {
     if (node.hasChildNodes()) {
-      let children = node.childNodes, childrenLen = children.length;
+      let children = node.childNodes;
+      let childrenLen = children.length;
+
       for (let i = 0; i < childrenLen; i++) {
         let _child = children[i];
-        callback( _child);
+        callback(_child);
 
         // 递归深度遍历节点，进行相应的处理
         this._transverse(_child, callback);
@@ -105,19 +110,29 @@ class Lego {
     let data = this.config.data;
 
     let self = this;
-    Object.keys(data).forEach(function(keyVal) {
+    Object.keys(data).forEach(function (keyVal) {
+      self._defineReactive(data, keyVal, data[keyVal]);
+    });
+  }
 
-      Object.defineProperty(data, keyVal, {
-        set: (value) => {
+  _defineReactive(data, keyVal, oriVlaue) {
 
+    let self = this;
+    Object.defineProperty(data, keyVal, {
+      get: () => {
+        return oriVlaue;
+      },
 
-          debugger;
-          data[keyVal] = value;
-          self._render();
+      set: (value) => {
+        if (oriVlaue == value) {
+          return;
         }
-      });
+        oriVlaue = value;
+        self._render();
+      }
     });
   }
 }
 
 export default Lego;
+
