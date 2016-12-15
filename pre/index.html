@@ -1,12 +1,25 @@
-
 <!DOCTYPE>
 <html>
   <head>
     <title>Hello, world !</title>
+
+    <script type="text/javascript">
+      var rohrdata = '';
+      var Rohr_Opt = new Object;
+      Rohr_Opt.Flag = 100001;
+      Rohr_Opt.LogVal = '';
+    </script>
+    <script type="text/javascript" src="http://awp-assets.meituan.net/hfe/rohr/1.0.2/rohr.min.js"></script>
   </head>
 
   <body>
     <div id="app"></div>
     <script type="text/javascript" src="./dist/app.js"></script>
+    <script type="text/javascript">
+
+        
+      
+      console.log(Rohr_Opt.reload('http://waimai.meituan.com')); 
+    </script>
   </body>
 </html>

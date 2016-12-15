@@ -8,7 +8,7 @@
     "type": "git"
   },
   "scripts": {
-    "dev": "node ./build/server.js"
+    "start": "node ./build/server.js"
   },
   "author": "XU Kai(xukai.ken@gmail.com)",
   "license": "MIT",
