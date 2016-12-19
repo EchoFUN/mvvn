@@ -9,6 +9,8 @@
  * 
  */
 
+'use strict';
+
 import utils from './utils'
 import template from './template';
 import directive from './directive';
@@ -71,13 +73,14 @@ class Lego {
         let attributes = node.attributes;
 
         Object.keys(attributes).forEach((key) => {
-          let direct = attributes[key].value;
+          let name = attributes[key].name.slice(2),
+            value = attributes[key].value;
 
-          let director = directive[direct];
+          let director = directive[name];
           if (!director) {
             return;
           }
-          director.bind.call(this, node);
+          director.bind.call(this, node, value);
         });
       }
     });
@@ -135,4 +138,3 @@ class Lego {
 }
 
 export default Lego;
-

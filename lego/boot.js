@@ -9,13 +9,15 @@
  * 
  */
 
+'use strict';
+
 import Lego from './lego';
 
 const instance = new Lego({
   element: '#app',
 
   template: `
-    <div c-handler="handler" style="cursor: pointer;display: inline;">Hi, guys. {{ welcome }} </div>
+    <div c-click="handler" style="cursor: pointer;display: inline;">Hi, guys. {{ welcome }} </div>
   `,
 
   // The data needed for the template bind.
@@ -29,6 +31,3 @@ const instance = new Lego({
     }
   }
 });
-
-
-

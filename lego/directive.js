@@ -9,13 +9,20 @@
  * 
  */
 
-exports.handler = {
+'use strict';
 
-  bind: function(node) {
-    var self = this;
-    node.addEventListener('click', function() {
+exports.click = {
 
-      self.config.data.welcome = 'Hi~';
+  bind: function (node, value) {
+    var self = this,
+      conf = self.config;
+
+    node.addEventListener('click', function () {
+
+      let func = conf.methods[value];
+      if (typeof func === 'function') {
+        func.call(conf);
+      }
     });
   }
 };
